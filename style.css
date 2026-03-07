@@ -1,4 +1,4 @@
-/* Efeito de gradiente na Hero Section */
+
 header::before {
     content: '';
     position: absolute;
@@ -8,7 +8,6 @@ header::before {
     z-index: 1;
 }
 
-/* Tipografia agressiva para fitness */
 h1, h2 {
     letter-spacing: -2px;
 }
