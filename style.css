@@ -11,3 +11,131 @@ header::before {
 h1, h2 {
     letter-spacing: -2px;
 }
+
+/* Fundo escuro atrás do modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9); /* Fundo bem escuro */
+}
+
+/* A caixa branca/escura no meio */
+.modal-content {
+    background-color: #111;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #e63946;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+/* Botão de fechar (X) */
+.close-button {
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-content h3 { color: #e63946; text-transform: uppercase; }
+.modal-content input, .modal-content select { padding: 12px; background: #222; border: 1px solid #333; color: white; }
+
+/* Estilo do botão principal */
+.btn-red {
+    background-color: #e63946 !important; /* Força o seu vermelho original */
+    color: white !important;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 800; /* Deixa o texto bem grosso */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3); /* Um brilho suave embaixo */
+}
+
+/* Efeito quando passa o mouse */
+.btn-red:hover {
+    background-color: #ff4d5a !important;
+    transform: translateY(-2px); /* Ele sobe um pouquinho */
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.5);
+}
+
+
+/* Container do Modal */
+.modal-content {
+    background-color: #121212; /* Preto fosco */
+    margin: 10% auto;
+    padding: 40px;
+    border: 2px solid #e63946;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.2);
+}
+
+/* Título e Texto */
+.modal-content h3 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.modal-content p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Os "Quadrados" de escrever (Inputs e Select) */
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Garante que o preenchimento não quebre a largura */
+}
+
+/* Quando a pessoa clica para escrever */
+.modal-content input:focus, .modal-content select:focus {
+    border-color: #e63946;
+    background-color: #222;
+    outline: none;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
+}
+
+/* Botão de Fechar mais elegante */
+.close-button {
+    color: #666;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 32px;
+    transition: 0.3s;
+}
+
+.close-button:hover {
+    color: #e63946;
+}

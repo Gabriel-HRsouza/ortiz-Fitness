@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortiz Fitness - O Seu Momento é Agora</title>
+    <title>Ortiz Fitness</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭕</text></svg>">
 </head>
 <body class="bg-white text-gray-900">
 
@@ -16,7 +17,9 @@
             <a href="#" class="hover:text-red-500">Aulas</a>
             <a href="#" class="hover:text-red-500">Free Pass</a>
         </div>
-        <button class="bg-red-600 px-4 py-2 rounded-full font-bold hover:bg-red-700 transition">MATRICULE-SE</button>
+        <button type="button" id="btn-inscrever" class="btn-red">
+    INSCREVA-SE JÁ
+</button>
     </nav>
 
     <header class="relative bg-black h-[500px] flex items-center overflow-hidden">
@@ -26,7 +29,7 @@
                 <h1 class="text-5xl md:text-7xl font-black mb-4 italic">MARÇO É A <br> <span class="text-red-600">VIRADA!</span></h1>
                 <p class="text-xl mb-6">O Carnaval acabou, seu ano começou agora.</p>
                 <div class="flex items-center gap-4">
-                    <span class="text-5xl font-bold">R$ 47,70</span>
+                    <span class="text-5xl font-bold">R$ 79,00</span>
                     <span class="text-sm uppercase">1º Mês <br> Promoção Limitada</span>
                 </div>
                 <button class="mt-8 bg-red-600 text-white text-xl px-10 py-4 rounded-lg font-bold hover:scale-105 transition-transform">INSCREVA-SE JÁ!</button>
@@ -82,6 +85,23 @@
 
     </div>
 </section>
+<div id="modal-inscricao" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Matrícula Ortiz Fitness</h3>
+        <p>Preencha os dados para garantir sua vaga!</p>
+        
+        <input type="text" id="nome" placeholder="Nome Completo">
+        <input type="email" id="email" placeholder="E-mail">
+        
+        <select id="plano">
+            <option value="Black">Plano Ortiz Black</option>
+            <option value="Gold">Plano Ortiz Gold</option>
+        </select>
+
+        <button type="button" id="btn-enviar-dados" class="btn-red">FINALIZAR MATRÍCULA</button>
+    </div>
+</div>
     <footer class="bg-black text-white py-10 text-center">
         <div class="text-xl font-bold text-red-600 mb-4">⭕rtiz Fitness</div>
         <p class="text-gray-500 text-sm">© 2026 Ortiz Fitness - Todos os direitos reservados.</p>
@@ -90,6 +110,7 @@
     <a href="https://wa.me/+55659911-1992" class="fixed bottom-6 left-6 bg-green-500 p-3 rounded-full shadow-2xl hover:bg-green-600 transition">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" alt="WhatsApp">
     </a>
-
+        
+    <script src="script.js"></script>
 </body>
 </html>
