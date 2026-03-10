@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cadastro | Ortiz Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/styles/cadastro.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭕</text></svg>">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo"><span>⭕</span>rtiz Fitness</a>
+    <a href="index.html" class="back">← Voltar</a>
+</nav>
+
+<main>
+    <div class="card">
+        <div id="form-view">
+            <div class="step-badge">ETAPA 2 DE 2</div>
+            <h1>FINALIZE SEU CADASTRO</h1>
+            <p class="subtitle">Quase lá! Complete os dados abaixo para garantir sua vaga.</p>
+
+            <div class="summary">
+                <strong>✓ Dados da etapa anterior</strong>
+                <div class="summary-fields">
+                    <div class="summary-item"><span class="label">Nome:</span> <span class="value" id="summary-nome">—</span></div>
+                    <div class="summary-item"><span class="label">Email:</span> <span class="value" id="summary-email">—</span></div>
+                    <div class="summary-item"><span class="label">Telefone:</span> <span class="value" id="summary-telefone">—</span></div>
+                </div>
+            </div>
+
+            <div id="error-msg" class="error-msg"></div>
+
+            <p class="section-label">Dados da matrícula</p>
+            <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" id="field-nome" readonly/>
+                <p class="readonly-note">✓ Preenchido automaticamente</p>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="field-email" readonly/>
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="text" id="field-telefone" readonly/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Plano Escolhido</label>
+                <div class="plano-badge" id="plano-badge">—</div>
+            </div>
+
+            <hr class="divider"/>
+
+            <p class="section-label">Complete seu perfil</p>
+            <div class="form-group">
+                <label>Data de Nascimento</label>
+                <input type="date" id="field-data" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Senha</label>
+                <div class="password-wrapper">
+                    <input type="password" id="field-senha" placeholder="Mínimo 8 caracteres" required/>
+                    <button type="button" class="toggle-pw" id="btn-toggle-senha">Mostrar</button>
+                </div>
+                <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+                <p class="strength-text" id="strength-text">Digite uma senha</p>
+            </div>
+
+            <div class="form-group">
+    <label>Confirmar Senha</label>
+    <div class="password-wrapper">
+        <input type="password" id="field-senha2" placeholder="Repita a senha" required/>
+        <button type="button" class="toggle-pw" onclick="toggleSenha2()">Mostrar</button>
+    </div>
+</div>
+
+            <button class="btn-submit" id="btn-finalizar">GARANTIR MINHA VAGA</button>
+
+            <p class="terms">
+                Ao finalizar, você concorda com os <u>Termos de Uso</u> e a <u>Política de Privacidade</u> da Ortiz Fitness.
+            </p>
+        </div>
+
+        <div class="success-screen" id="success-view">
+            <div class="success-icon">🏆</div>
+            <h2>CADASTRO CONFIRMADO!</h2>
+            <p id="success-msg">Bem-vindo à Ortiz Fitness! Seu treino começa agora.</p>
+            <a href="index.html" class="btn-home">VOLTAR AO INÍCIO</a>
+        </div>
+    </div>
+</main>
+
+<script src="/scripts/cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --red: #e3000f;
+    --red-dark: #b0000b;
+    --black: #0a0a0a;
+    --gray: #1a1a1a;
+    --gray-light: #2a2a2a;
+    --white: #f5f5f5;
+    --muted: #888;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: #000;
+    border-bottom: 2px solid var(--red);
+}
+/* AJUSTE DO LOGO PARA FICAR IGUAL À HOME */
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo span {
+  color: var(--red);
+  font-size: 1.6rem; /* Ajuste para o emoji/círculo alinhar com o texto */
+}
+
+/* DEIXAR O CALENDÁRIO CLARO E VISÍVEL */
+.date-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+input[type="date"] {
+  position: relative;
+  color-scheme: dark; /* Isso avisa o navegador que o fundo é escuro */
+}
+
+/* Customizando o ícone do calendário (Chrome/Edge/Safari) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23e3000f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>');
+  cursor: pointer;
+  filter: brightness(0) invert(1); /* Deixa o ícone branco */
+  padding: 5px;
+  border-radius: 4px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: none; /* Volta a ficar vermelho (ou cor original) no hover */
+}
+
+nav a.back {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+nav a.back:hover { color: var(--white); }
+
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    background: radial-gradient(ellipse at 80% 0%, rgba(227,0,15,0.12) 0%, transparent 60%), var(--black);
+}
+
+.card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--gray);
+    border: 1px solid var(--gray-light);
+    border-top: 3px solid var(--red);
+    border-radius: 4px;
+    padding: 48px 40px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+}
+
+.step-badge {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+}
+
+/* SUMMARY */
+.summary {
+    background: var(--gray-light);
+    border-left: 3px solid var(--red);
+    border-radius: 2px;
+    padding: 14px 18px;
+    margin-bottom: 28px;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+.summary strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.summary-fields { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.summary-item { display: flex; gap: 6px; align-items: center; }
+.summary-item .label { color: var(--muted); }
+.summary-item .value { color: var(--white); font-weight: 600; }
+
+/* FORM */
+.form-group { margin-bottom: 20px; }
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid var(--gray-light);
+    border-radius: 3px;
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    padding: 14px 16px;
+    outline: none;
+}
+input:focus, select:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(227,0,15,0.15);
+}
+input[readonly] { opacity: 0.6; cursor: not-allowed; border-style: dashed; }
+.readonly-note { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.divider { border: none; border-top: 1px solid var(--gray-light); margin: 28px 0; }
+.section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: var(--red);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* PASSWORD STRENGTH */
+.password-wrapper { position: relative; }
+.toggle-pw {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.strength-bar { height: 3px; background: var(--gray-light); margin-top: 8px; overflow: hidden; }
+.strength-fill { height: 100%; width: 0%; transition: width 0.3s, background 0.3s; }
+.strength-text { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+
+.plano-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(227,0,15,0.1);
+    border: 1px solid rgba(227,0,15,0.3);
+    padding: 10px 16px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--red);
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.btn-submit:hover { background: var(--red-dark); }
+.btn-submit.loading { pointer-events: none; opacity: 0.7; }
+
+.terms { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 16px; }
+
+/* SUCCESS SCREEN */
+.success-screen { display: none; text-align: center; }
+.success-icon {
+    width: 72px; height: 72px; background: rgba(227,0,15,0.1);
+    border: 2px solid var(--red); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px; font-size: 2rem;
+}
+.btn-home {
+    display: inline-block; background: var(--red); color: #fff;
+    text-decoration: none; padding: 14px 32px; font-family: 'Bebas Neue', sans-serif;
+}
+
+.error-msg {
+    background: rgba(227,0,15,0.1); border: 1px solid rgba(227,0,15,0.4);
+    color: #ff6b6b; padding: 12px 16px; margin-bottom: 20px; display: none;
+}
+
+@media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .card { padding: 32px 24px; }
+    .row { grid-template-columns: 1fr; }
+}
